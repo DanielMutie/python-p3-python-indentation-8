@@ -1,0 +1,36 @@
+
+O(1) Time (CSF)
+O(1) is constant time. That means that no matter how Big Our data set is, the algorithm will always take the same amount of time. Imagine we have the following function which returns the first element of an array:
+
+function returnFirst(array) {
+  return array[0];
+}
+No matter how big the data set is, returning the first item in the data set is trivial. It will always take the same amount of time.
+
+Note that O(1) doesn't necessarily mean fast. It just means constant. It could still be something that takes a long time. For instance, imagine we have a very Big, heavy rocket that we want to send to the moon. It's a powerful rocket but it's also fairly slow. The benefit of this rocket is that no matter how much equipment we put in the storage of the rocket, it will take the same amount of time to get to the moon. We'd say that the time is constant even though it will take a long time to get to the moon.
+
+In general, though, algorithms that use O(1) are very efficient. For instance, inserting a node at the beginning of a linked list is O(1) because it will always be the same regardless of how Big the linked list is. We will learn more about linked lists later in this course.
+
+O(N) Time (CSF)
+O(N) is linear time. The larger a data set is, the longer an algorithm in O(N) time will take - but the increase in time will be constant.
+
+A good example is a function that loops through a data set:
+
+function doubledArray(array) {
+  let doubledArray = [];
+  array.forEach(function(element) {
+    doubledArray.push(element * 2);
+  });
+  return doubledArray;
+}
+In this example, we use a loop to double each element in an array. If array is very small, it won't take long for this function to run. However, the larger the array is, the longer it will take for the function to run - but it will take the same amount of time for each element in the array. So if it takes .000001 seconds for each iteration through the loop - it would take .000001 * 100 if the array has 100 elements and it would take .000001 * 100,000 if the array had 100,000 elements.
+
+For that reason, we can portray the increase in time as linear:
+
+
+
+As we can see from this chart, as the size of the dataset increases, so does the runtime - but the increase is linear.
+
+Generally, while O(1) will be faster than O(N), it's important to realize that some things that are constant can still take a long time.
+
+In an ideal world, our algorithms would never be more than O(N) in runtime. However, sometimes it's just not possible to write an algorithm that is that efficient.
